@@ -35,10 +35,10 @@ import HUE from '@material-ui/core/colors';
 import CloudDoneIcon from '@material-ui/icons/CloudDone';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import HomeIcon from '@material-ui/icons/Home';
-
-
-
-
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import ListAltIcon from '@mui/icons-material/ListAlt';
+import CampaignIcon from '@mui/icons-material/Campaign';
+import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 
 const drawerWidth = 240;
 
@@ -104,7 +104,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NavbarV2() {
+function NavbarV2() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -162,8 +162,10 @@ export default function NavbarV2() {
 
           </IconButton>
           <Grid item xs={12} sm={21}>
-          <Box textAlign="left" m={2}>
-      <Typography >OWL</Typography>
+          <Box textAlign="left" m={1}>
+      <Typography variant="h5"> OWL: SE3352 </Typography>
+      
+
       </Box>
          </Grid>
 
@@ -236,40 +238,44 @@ export default function NavbarV2() {
 
         <List component="nav" aria-label="main mailbox folders">
         
-        <ListItem button component={RouterLink} to="/">
+        <ListItem button component={RouterLink} to="/Home">
           <ListItemIcon>
-            <HomeIcon />
+            <ListAltIcon />
           </ListItemIcon>
-          <ListItemText primary="DASHBOARD" />
+          <ListItemText primary="Overview" />
         </ListItem>
 
-        <ListItem button component={RouterLink} to="/">
+        <Divider />
+        
+        <ListItem button  >
           <ListItemIcon>
-            <ErrorOutlineIcon/>
+          <CampaignIcon/>
           </ListItemIcon>
-          <ListItemText primary="PROBES & DC"/>
+          <ListItemText primary="Annoucements" />
         </ListItem>
+        
+        <Divider />
 
-        <ListItem button component={RouterLink} to="/User">
+        <ListItem button component={RouterLink} to="/Pg1">
           <ListItemIcon>
-            <CloudDoneIcon />
+          <MenuBookIcon/>
           </ListItemIcon>
-          <ListItemText primary="TESTS"/>
+          <ListItemText primary="Course Content" />
         </ListItem>
+        
+        <Divider />
 
-        <ListItem button component={RouterLink} to="/">
+        <ListItem button >
           <ListItemIcon>
-            <GiHouse />
+         < VideoCameraFrontIcon/>
           </ListItemIcon>
-          <ListItemText primary="Drafts" />
+          <ListItemText primary="ZOOOM" />
         </ListItem>
-
-        <ListItem button component={RouterLink} to="/">
-          <ListItemIcon>
-            <GiHouse />
-          </ListItemIcon>
-          <ListItemText primary="Drafts" />
-        </ListItem>
+        
+      
+        
+        <Divider />
+        
         
 
 
@@ -285,3 +291,4 @@ export default function NavbarV2() {
     </>
   );
 }
+export default NavbarV2
