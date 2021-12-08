@@ -58,6 +58,7 @@ export default function Pg1() {
 
     
     <Box >
+      
       <Typography variant="h4">Page 1</Typography>
       <Grid container spacing={1}>
 
@@ -69,6 +70,9 @@ export default function Pg1() {
         <Grid item xs={11}>
         <Container >
         <List>
+        <ListItem>
+      <Button align='right' variant='contained' href='/Home'>Back</Button> 
+      </ListItem>
         <Divider light />
       <ListItem >
       <Box sx={{ border: 1, borderColor: 'grey.500', width: 300,height: 300 }}>

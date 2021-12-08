@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-let comments=require('./comments');
+
 let wololo=require('./wololo');
 const fs = require('fs');
 
@@ -15,8 +15,16 @@ router.get("/", function(req, res, next) {
 //reads the JSON file and sends it to the thing
 router.get("/fromJSON", function (req,res,next) {
 
-    console.log(comments);
-    res.send(JSON.stringify(comments));
+    fs.readFile('./comments.json', 'utf8', (err, jsonString) => {
+        if (err) {
+            console.log("File read failed:", err)
+            return
+        }
+        console.log('File data:', jsonString) 
+       res.send(jsonString)
+    })
+
+   
 
 });
 
@@ -36,16 +44,18 @@ router.post("/toJSON", function (req,res,next) {
         "comment":comment
             }
 
-            let data=JSON.stringify(toWrite);
-
-        fs.writeFile(comments, data, (err) => {
-
-        if (err) throw err;
-        console.log('Data written to file');
-    });
-
-    res.send('Worked')
-
+            fs.readFile('./comments.json', function (err, data) 
+            {
+                let json = JSON.parse(data);
+                json.push(toWrite);    
+               
+               
+               
+                fs.writeFile("./comments.json", JSON.stringify(json), function(err){
+                  if (err) throw err;
+                  console.log('The "data to append" was appended to file!');
+                });
+            })
 });
 
 router.get("/PlaceHolder2", function (req,res,next) {
