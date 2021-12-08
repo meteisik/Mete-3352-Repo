@@ -27,9 +27,9 @@ class Pg3 extends Component {
         this.setState(this.getDefaultState())
     }   
 
-    submit = () => {
+    submit = () => { //sends the txt box to write to the server
         let helpMe=this.state.text1;
-        let names2='xXx420_69_XBOXLIVE_GAMERxXx'
+        let names2='first_inital_last_name_number'
         const requestOptions = {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
@@ -42,7 +42,7 @@ class Pg3 extends Component {
     }
 
     onLoad=() =>{
-
+//interacts with the server retrieves comments from server
         fetch("http://localhost:9000/TestAPI/fromJSON")
             .then(res => res.text())
             .then(res => this.setState({apiResponse: JSON.parse(res)}));

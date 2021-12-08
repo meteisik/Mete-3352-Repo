@@ -12,6 +12,7 @@ router.get("/", function(req, res, next) {
     res.send("API is working properly");
 });
 
+//reads the JSON file and sends it to the thing
 router.get("/fromJSON", function (req,res,next) {
 
     console.log(comments);
@@ -19,6 +20,7 @@ router.get("/fromJSON", function (req,res,next) {
 
 });
 
+//writes to JSON file howveer it doesnt work for now
 router.post("/toJSON", function (req,res,next) {
 
     let name=req.body.names2
@@ -27,6 +29,8 @@ router.post("/toJSON", function (req,res,next) {
     console.log(comment)
 
 //doesnt work for now lol
+    
+    
     let toWrite={
         'name': name,
         "comment":comment
@@ -34,7 +38,7 @@ router.post("/toJSON", function (req,res,next) {
 
             let data=JSON.stringify(toWrite);
 
-        fs.writeFile(wololo.comment, data, (err) => {
+        fs.writeFile(comments, data, (err) => {
 
         if (err) throw err;
         console.log('Data written to file');
