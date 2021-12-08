@@ -36,7 +36,7 @@ router.post("/toJSON", function (req,res,next) {
     console.log(name)
     console.log(comment)
 
-//doesnt work for now lol
+//appends to JSON file
     
     
     let toWrite={
