@@ -10,6 +10,11 @@ class Pg3 extends Component {
                 <h1>
                     Comment Section
                 </h1>
+                <div className='back-button'>
+                    <Button className='back' href='/Pg2'>
+                        Back
+                    </Button>
+                </div>
                 <div className='all-comments'>
                     {/* All past comments updated through DB */}
                 </div>
