@@ -3,7 +3,20 @@ import TextField from '@mui/material/TextField';
 import { Button, Grid, ListItem, Container, List, Divider, Box, Typography } from '@mui/material';
 class Pg3 extends Component {
 
-
+    constructor(props){
+        super(props);
+        // initial state
+        this.state = this.getDefaultState();
+      }
+    
+      getDefaultState = () => {
+        return { text1: '', text2: '' };
+      }
+    
+      clear = () => {
+        // return the initial state
+        this.setState(this.getDefaultState())
+      }    
 
     render() {
         return (
@@ -32,12 +45,15 @@ class Pg3 extends Component {
                                         rows={4}
                                         style= {{ width: 720 }}
                                         defaultValue=""
+                                        value={this.state.text1}
+                                        onChange={(e)=>{this.setState({text1: e.target.value})}}
+                                        floatingLabelText="Receipt Desc"
                                     />
                                 </ListItem>
                                 <ListItem>
                                     <Button>Submit</Button>
                                     <Divider orientation='vertical' variant='middle' flexItem />
-                                    <Button>Cancel</Button>
+                                    <Button label="Clear" onClick={this.clear}>Cancel</Button>
                                 </ListItem>
                             </List>
                         </Container>
