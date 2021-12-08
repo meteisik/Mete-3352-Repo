@@ -3,6 +3,8 @@ import TextField from '@mui/material/TextField';
 import { Button, Grid, ListItem, Container, List, Divider, Box, Typography } from '@mui/material';
 class Pg3 extends Component {
 
+
+
     render() {
         return (
             <Box>
@@ -20,9 +22,11 @@ class Pg3 extends Component {
                                     <Typography variant='h2'>Comment Section</Typography>
                                 </ListItem>
                                 <Divider light />
+                                    <Typography>THIS IS WHERE THE COMMENT TABLE GOES</Typography>
+                                <Divider light />
                                 <ListItem>
                                     <TextField
-                                        id='outlined-multiline-static'
+                                        id='comment-box'
                                         label='Comment'
                                         multiline
                                         rows={4}
