@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import Home from "./Home.js";
 import Pg3 from './Pages/Pg3';
 import Pg1 from './Pages/Pg1';
+import Pg2 from './Pages/Pg2';
 function App() {
 
 
@@ -28,7 +29,7 @@ function App() {
                 <Route path='/Home' component={Home} />
                 <Route path='/Pg3' component={Pg3} />
                 <Route path='/Pg1' component={Pg1} />
-          
+                <Route path='/Pg2' component={Pg2} />
 
       </Switch>
 
