@@ -5,18 +5,21 @@ class Pg3 extends Component {
 
     constructor(props){
         super(props);
-        // initial state
         this.state = this.getDefaultState();
-      }
+    }
     
-      getDefaultState = () => {
-        return { text1: '', text2: '' };
-      }
+    getDefaultState = () => {
+        return { text1: '' };
+    }
     
-      clear = () => {
-        // return the initial state
+    clear = () => {
         this.setState(this.getDefaultState())
-      }    
+    }   
+
+    submit = () => {
+        // Here is where you insert the data into the database!
+        this.setState(this.getDefaultState())
+    } 
 
     render() {
         return (
@@ -47,11 +50,10 @@ class Pg3 extends Component {
                                         defaultValue=""
                                         value={this.state.text1}
                                         onChange={(e)=>{this.setState({text1: e.target.value})}}
-                                        floatingLabelText="Receipt Desc"
                                     />
                                 </ListItem>
                                 <ListItem>
-                                    <Button>Submit</Button>
+                                    <Button label="Submit" onClick={this.submit}>Submit</Button>
                                     <Divider orientation='vertical' variant='middle' flexItem />
                                     <Button label="Clear" onClick={this.clear}>Cancel</Button>
                                 </ListItem>
@@ -63,7 +65,7 @@ class Pg3 extends Component {
                     </Grid>      
                 </Grid>
             </Box>
-        )
+        );
     }
 }
 
