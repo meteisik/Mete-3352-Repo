@@ -52,7 +52,7 @@ class Pg3 extends Component {
 
 
     }
-
+//The Tables on the page are the view, the controller would be the Pg3 itself, which manages the Model(the server/api)
     render() {
         return (
             <Box>
@@ -121,7 +121,7 @@ class Pg3 extends Component {
                         </Container>
                     </Grid>
                     <Grid item xs={1}>
-                        <Box sx={{ bgcolor: '#ff9800', height: '100vh' }} />
+                        <Box/>
                     </Grid>      
                 </Grid>
             </Box>

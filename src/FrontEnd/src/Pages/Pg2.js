@@ -32,7 +32,7 @@ export default function Home() {
    
 
 
-
+//the elements in the return are the views, any functions outside of  the return are the models
 
   return (
     

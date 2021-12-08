@@ -42,7 +42,7 @@ import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 
 const drawerWidth = 240;
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({ //styles for nav bar
   root: {
     display: 'flex',
   },
@@ -104,7 +104,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function NavbarV2() {
+function NavbarV2() { //React state hooks
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -133,7 +133,7 @@ function NavbarV2() {
   };
   
 
-  return (
+  return (//Navbar rendering below helps redirect to the pages
       <>
     <div className={classes.root}>
    

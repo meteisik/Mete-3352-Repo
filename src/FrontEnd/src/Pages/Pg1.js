@@ -10,7 +10,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
-import Table from '../Table'
+
 import { sizing } from '@mui/system';
 import Grow from '@mui/material/Grow';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -23,16 +23,10 @@ import {
   Link,
   useRouteMatch
 } from "react-router-dom";
-const icon = (
-  <Paper sx={{ m: 1 }} elevation={4}>
-    <Box     >
-    <Table size = "small"/>
-    </Box>
-  </Paper>
-);
 
 
 
+ //below would be part of the controller
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -52,7 +46,7 @@ export default function Pg1() {
 
 
 
-
+//the elements in the return are the views, any functions outside of  the return are the models
   return (
 
 

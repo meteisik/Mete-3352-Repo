@@ -5,7 +5,7 @@ let wololo=require('./wololo');
 const fs = require('fs');
 
 
-
+//this would be the model as the model is the what manages the data independent of user interfaces the api/server controls the data
 
 router.get("/", function(req, res, next) {
 
